@@ -6,7 +6,7 @@ import { ClientOnly } from './ClientOnly'
 import { azureLightTheme, watermelonLightTheme, windows95Theme } from '@lifi/widget';
 
 
-export function Widget(e) {
+export function Widget() {
   const config = {
     variant: "compact",
     subvariant: "default",
@@ -54,9 +54,6 @@ export function Widget(e) {
         }
       }
     },
-    walletConfig: {
-      onConnect: ()=>{e==null||e()}
-    }
   } as Partial<WidgetConfig>
 
 
@@ -68,5 +65,9 @@ export function Widget(e) {
       <LiFiWidget config={config} integrator="LuxuryZap" />
     </ClientOnly>
   )
+}
+
+function e(): boolean {
+  throw new Error('Function not implemented.');
 }
 
